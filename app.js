@@ -1,16 +1,16 @@
 
-var list =document.getElementById("list")
+var list = document.getElementById("list")
 
 function addTodo(){
     var todo_item = document.getElementById("todo-item");
 
     var li = document.createElement('li')
     var liText = document.createTextNode(" " + todo_item.value + " ")
-   
-    var libox = document.createElement('input')
-    libox.setAttribute('type' , 'checkbox')
-    li.appendChild(libox)
     li.appendChild(liText)
+   
+    // var libox = document.createElement('input')
+    // libox.setAttribute('type' , 'checkbox')
+    // li.appendChild(libox)
     
     var delBtn = document.createElement('button')
     var delText = document.createTextNode(' Delete')
@@ -46,6 +46,8 @@ function deleteItem(e){
 }
 
 function editItem(e){
+    // console.log(e.parentNode.nodeValue)
+    
     var val = e.parentNode.firstChild.nodeValue;
     var editValue = prompt("Enter edit value")
     e.parentNode.firstChild.nodeValue = editValue;
